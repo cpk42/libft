@@ -6,47 +6,11 @@
 /*   By: ckrommen <ckrommen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/26 16:59:59 by ckrommen          #+#    #+#             */
-/*   Updated: 2017/09/29 13:55:05 by ckrommen         ###   ########.fr       */
+/*   Updated: 2017/10/03 12:58:12 by ckrommen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static	int		ft_memsize(char const *str, char c)
-{
-	int i;
-	int count;
-	int toggle;
-
-	toggle = 0;
-	i = 0;
-	count = 0;
-	while (str[i])
-	{
-		if (str[i] == c)
-			toggle = 0;
-		else if (!toggle && str[i])
-		{
-			toggle = 1;
-			count++;
-		}
-		i++;
-	}
-	return (count += 1);
-}
-
-static	int		ft_strsubcount(char const *s, int index, char c)
-{
-	int i;
-
-	i = 0;
-	while (s[index] != c && s[index])
-	{
-		index++;
-		i++;
-	}
-	return (i);
-}
 
 char			**ft_strsplit(char const *s, char c)
 {
@@ -57,8 +21,8 @@ char			**ft_strsplit(char const *s, char c)
 
 	x = 0;
 	i = 0;
-	new = s ? (char **)malloc((ft_memsize(s, c)) * sizeof(char *)) : NULL;
-	if (!new || !ft_memsize(s, c))
+	new = s ? (char **)malloc((ft_wordcount(s, c)) * sizeof(char *)) : NULL;
+	if (!new || !ft_wordcount(s, c))
 		return (NULL);
 	while (s[i])
 	{

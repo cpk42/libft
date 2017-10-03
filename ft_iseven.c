@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_iseven.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckrommen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/22 21:36:23 by ckrommen          #+#    #+#             */
-/*   Updated: 2017/10/03 13:27:51 by ckrommen         ###   ########.fr       */
+/*   Created: 2017/10/03 13:36:36 by ckrommen          #+#    #+#             */
+/*   Updated: 2017/10/03 13:37:11 by ckrommen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+int	ft_iseven(int n)
 {
-	char	*str;
-
-	str = malloc(size);
-	if (str == NULL)
-		return (NULL);
-	ft_bzero(str, size);
-	return (str);
+	return (n % 2 == 0 ? 1 : 0);
 }

@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_strsubcount.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckrommen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/22 21:36:23 by ckrommen          #+#    #+#             */
-/*   Updated: 2017/10/03 13:27:51 by ckrommen         ###   ########.fr       */
+/*   Created: 2017/10/03 12:52:35 by ckrommen          #+#    #+#             */
+/*   Updated: 2017/10/03 12:52:54 by ckrommen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+int	ft_strsubcount(char const *s, int index, char c)
 {
-	char	*str;
+	int i;
 
-	str = malloc(size);
-	if (str == NULL)
-		return (NULL);
-	ft_bzero(str, size);
-	return (str);
+	i = 0;
+	while (s[index] != c && s[index])
+	{
+		index++;
+		i++;
+	}
+	return (i);
 }

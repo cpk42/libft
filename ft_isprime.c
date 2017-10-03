@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_isprime.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckrommen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/22 21:36:23 by ckrommen          #+#    #+#             */
-/*   Updated: 2017/10/03 13:27:51 by ckrommen         ###   ########.fr       */
+/*   Created: 2017/10/03 13:33:07 by ckrommen          #+#    #+#             */
+/*   Updated: 2017/10/03 13:35:23 by ckrommen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+int	ft_isprime(int n)
 {
-	char	*str;
+	int i;
 
-	str = malloc(size);
-	if (str == NULL)
-		return (NULL);
-	ft_bzero(str, size);
-	return (str);
+	i = n / 2;
+	while (i > 1)
+	{
+		if (n % i != 0)
+			return (0);
+		i--;
+	}
+	return (1);
 }

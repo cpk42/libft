@@ -6,7 +6,7 @@
 /*   By: ckrommen <ckrommen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 13:53:11 by ckrommen          #+#    #+#             */
-/*   Updated: 2017/10/02 21:40:37 by ckrommen         ###   ########.fr       */
+/*   Updated: 2017/10/03 13:38:15 by ckrommen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,11 @@ void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+int				ft_strsubcount(char const *s, int index, char c);
+int				ft_wordcount(char const *str, char c);
 t_list			*ft_lstpush(t_list*lst, void const *content, size_t
 							content_size);
+int				ft_isprime(int n);
+int				ft_iseven(int n);
 
 #endif

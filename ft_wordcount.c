@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_wordcount.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckrommen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/22 21:36:23 by ckrommen          #+#    #+#             */
-/*   Updated: 2017/10/03 13:27:51 by ckrommen         ###   ########.fr       */
+/*   Created: 2017/10/03 12:55:22 by ckrommen          #+#    #+#             */
+/*   Updated: 2017/10/03 13:16:41 by ckrommen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+int	ft_wordcount(char const *str, char c)
 {
-	char	*str;
+	int i;
+	int count;
+	int toggle;
 
-	str = malloc(size);
-	if (str == NULL)
-		return (NULL);
-	ft_bzero(str, size);
-	return (str);
+	toggle = 0;
+	i = 0;
+	count = 0;
+	while (str[i])
+	{
+		if (str[i] == c)
+			toggle = 0;
+		else if (!toggle && str[i])
+		{
+			toggle = 1;
+			count++;
+		}
+		i++;
+	}
+	return (count += 1);
 }
