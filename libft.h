@@ -6,7 +6,7 @@
 /*   By: ckrommen <ckrommen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 13:53:11 by ckrommen          #+#    #+#             */
-/*   Updated: 2017/10/03 13:38:15 by ckrommen         ###   ########.fr       */
+/*   Updated: 2018/02/27 15:50:13 by ckrommen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include "./ft_printf/ft_printf.h"
 
 typedef	struct	s_list
 {
@@ -87,5 +88,7 @@ t_list			*ft_lstpush(t_list*lst, void const *content, size_t
 							content_size);
 int				ft_isprime(int n);
 int				ft_iseven(int n);
+int				ft_printf(const char *format, ...);
+int				get_next_line(const int fd, char **line);
 
 #endif
