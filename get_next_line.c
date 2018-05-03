@@ -6,7 +6,7 @@
 /*   By: ckrommen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/05 20:13:43 by ckrommen          #+#    #+#             */
-/*   Updated: 2017/12/07 14:52:22 by ckrommen         ###   ########.fr       */
+/*   Updated: 2018/05/02 22:54:04 by ckrommen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int		ft_get_line(char **temp, int fd, char **line)
 	char *ap;
 	char *mem;
 
+	if (!temp[fd])
+		return (0);
 	if ((ap = ft_strchr(temp[fd], '\n')))
 	{
 		mem = temp[fd];
