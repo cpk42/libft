@@ -6,7 +6,7 @@
 /*   By: ckrommen <ckrommen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 12:55:57 by ckrommen          #+#    #+#             */
-/*   Updated: 2017/09/24 19:59:17 by ckrommen         ###   ########.fr       */
+/*   Updated: 2018/10/07 20:27:38 by ckrommen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,5 @@
 
 size_t	ft_strlen(const char *str)
 {
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	return (*str ? (ft_strlen(str+1) + 1) : 0);
 }
