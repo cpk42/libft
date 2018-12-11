@@ -14,5 +14,5 @@
 
 int	ft_iseven(int n)
 {
-	return (n % 2 == 0 ? 1 : 0);
+	return (n % 2 == 0);
 }
